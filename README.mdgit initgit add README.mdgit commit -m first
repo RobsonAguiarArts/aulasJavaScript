@@ -1,0 +1,7 @@
+# aulasJavaScript commit
+git branch -M main
+git remote add origin https://github.com/RobsonAguiarArts/aulasJavaScript.git
+git push -u origin main
+
+
+echo # aulasJavaScript >> README.md
