@@ -60,7 +60,7 @@ console.log(restanteDeFerias(5));
 // quando o evento 'scroll' ocorrer.
 
 addEventListener('scroll', () => {
-  console.log('Robson');
+  console.log(numeroPar(5));
 });
 
 // Corrija o erro abaixo
