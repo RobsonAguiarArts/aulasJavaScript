@@ -1,50 +1,63 @@
-// Bloco de código que pode ser executado e reutilizado. Valores podem ser passados por uma função e a mesma retorna outro valor.
-
-function areaQaudrado(lado){
-  return lado * lado;
-}
-var quadrado = areaQaudrado(10);
-areaQaudrado(5);
-areaQaudrado(2);
-console.log(quadrado);
-
-function pi(){
-  return 3.14;
-}
-var total = 5 * pi();
-console.log(total);
-
-// Parâmetros e Argumentos
-
-// Ao criar uma função, você pode definir parâmetros.
-
-// Ao executar uma função, você pode passar argumentos.
-// peso e altura são os parâmetros
-function imc(peso,altura){
-  const imc = peso / (altura ** 2);
-  return imc;
-}
-console.log(imc(76,1.76));
-console.log(imc(76,1.86));
-
-function corFavorita(cor){
-  if(cor === 'azul'){
-    return 'Eu gosto do céu';
-  }else if(cor === 'verde'){
-    return 'Eu gosto de mato';
+// Crie uma função para verificar se um valor é Truthy
+function reprovou(notaProva){
+  var notaMinima = 5;
+  if(notaProva < notaMinima){
+    return true;
   }else{
-    return 'Eu não gosto de nada';
+    return false;
   }
 }
-// parênteses executa a função
-console.log(corFavorita('azul'));
+console.log(reprovou(5));
+// Crie uma função matemática que retorne o perímetro de um quadrado
+// lembrando: perímetro é a soma dos quatro lados do quadrado
+function perimetroQuadrado(ladoQuadrado){
+  var perimetro = ladoQuadrado + ladoQuadrado;
+  return perimetro;
+}
+console.log(perimetroQuadrado(10));
+// Crie uma função que retorne o seu nome completo
+// ela deve possuir os parâmetros: nome e sobrenome
+function nomeCompleto(nome,sobrenome){
+return` ${nome} ${sobrenome}`;
+}
+console.log(nomeCompleto('Robson','Aguiar'));
 
-// Argumentos podem ser funções
+// Crie uma função que verifica se um número é par
+function numeroPar(numero){
+  if(numero % 2 == 0 ){
+    return `O número digitado foi ${numero} e o resto da divisão dele é ${numero % 2} então ele é par`;
+  }else{
+    return `O número digitado foi ${numero} e o resto da divisão dele é ${numero % 2} então ele é impar`;
+  }
+}
+console.log(numeroPar(3));
+// Crie uma função que retorne o tipo de
+// dado do argumento passado nela (typeof)
+function restanteDeFerias(diasDeferiasJaTiradas){
+  var totalDeFerias = 30;
+  var faltamTirar = totalDeFerias - diasDeferiasJaTiradas;
+  return`Eu ainda tenho ${faltamTirar} dias de ferias para aproveitar`
+}
 
-// Chamadas de Callback, geralmente são as funções qe ocorrem após algum evento
+console.log(typeof restanteDeFerias(4));
+console.log(restanteDeFerias(5));
 
-addEventListener('click', () => {
-  console.log('clicou');
+// addEventListener é uma função nativa do JavaScript
+// o primeiro parâmetro é o evento que ocorre e o segundo o Callback
+// utilize essa função para mostrar no console o seu nome completo
+// quando o evento 'scroll' ocorrer.
+
+addEventListener('scroll', () => {
+  console.log('Robson');
 });
 
-// Funções anônimas são aquelas em que o nome da função não é definido, escritas como function() {} ou () => {}
+// Corrija o erro abaixo
+var totalPaises = 193;
+function precisoVisitar(paisesVisitados) {
+  return `Ainda faltam ${totalPaises - paisesVisitados} países para visitar`;
+}
+function jaVisitei(paisesVisitados) {
+  return `Já visitei ${paisesVisitados} do total de ${totalPaises} países`;
+}
+console.log(precisoVisitar(20));
+console.log(jaVisitei(20));
